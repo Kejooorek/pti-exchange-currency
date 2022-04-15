@@ -1,12 +1,7 @@
 import React from "react";
+import { User } from "../types/userType";
 
-interface Person {
-  name?: string | null;
-  picture?: string | null;
-  email?: string | null;
-}
-
-const HelloPage = ({ name, picture, email }: Person) => {
+const HelloPage = ({ name, picture, email }: User) => {
   return (
     <>
       <h1>Hi:{name}</h1>
