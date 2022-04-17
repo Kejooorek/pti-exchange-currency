@@ -1,6 +1,7 @@
 import { useUser } from "@auth0/nextjs-auth0";
 import type { NextPage } from "next";
-import HelloPage from "../components/helloPage";
+import HeadContainer from "../components/HeadContainer";
+import MainContainer from "../components/MainContainer";
 import Navbar from "../components/Navbar";
 import UserProfile from "../components/UserProfile";
 const Home: NextPage = () => {
@@ -14,8 +15,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Navbar></Navbar>
-      <UserProfile picture={user.picture} name={user.name}></UserProfile>
-      {/* <HelloPage name={user.name} picture={user.picture} email={user.email} /> */}
+      <HeadContainer name={user.name}></HeadContainer>
+      <MainContainer></MainContainer>
     </>
   );
 };
