@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import EuropaMap from "../../components/EuropaMap";
+import Navbar from "../../components/Navbar";
 
 const Curriencies = () => {
   return (
-    <div>Curriencies</div>
-  )
-}
+    <>
+      <Navbar></Navbar>
+      <EuropaMap></EuropaMap>
+    </>
+  );
+};
 
-export default Curriencies
+export default Curriencies;
