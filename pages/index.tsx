@@ -7,12 +7,10 @@ import Navbar from "../components/Navbar";
 import UserProfile from "../components/UserProfile";
 const Home: NextPage = () => {
   const { user, error, isLoading } = useUser();
-  console.log(user);
 
   if (isLoading) return <h1>Loading...</h1>;
 
   if (error || !user) return <h1>Login or SignIn</h1>;
-
   return (
     <>
       <Navbar></Navbar>

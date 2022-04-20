@@ -5,7 +5,7 @@ const MainContainer = ({ name }: User) => {
   return (
     <>
       <main className="flex w-full h-96">
-        <section className="flex w-1/2 bg-red-300 justify-center items-center pt-4">
+        <section className="flex w-1/2  justify-center items-center pt-4">
           <div className="w-96 h-56 m-5 bg-red-100 rounded-xl relative text-white shadow-2xl bg-gradient-to-tr from-blue-400 to-blue-600 transition-transform transform hover:scale-105 cursor-pointer">
             <div className="w-full px-8 absolute top-8 ">
               <div className="flex justify-between">
@@ -70,7 +70,7 @@ const MainContainer = ({ name }: User) => {
             </div>
           </div>
         </section>
-        <div className="flex bg-pink-300  h-96 w-1/2"></div>
+        <div className="flex  h-96 w-1/2"></div>
       </main>
     </>
   );
