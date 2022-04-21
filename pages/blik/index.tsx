@@ -32,6 +32,7 @@ const Blik = () => {
   return (
     <>
       <Navbar></Navbar>
+      
       <main className="flex w-full h-screen  justify-center items-center flex-col">
         <section className="mb-12">
           <h5 className="text-8xl font-bold text-blue-800">{blikCode}</h5>
