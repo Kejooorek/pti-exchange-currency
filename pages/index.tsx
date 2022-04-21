@@ -1,21 +1,25 @@
-import { useUser } from "@auth0/nextjs-auth0";
 import type { NextPage } from "next";
 import Footer from "../components/Footer";
 import HeadContainer from "../components/HeadContainer";
 import MainContainer from "../components/MainContainer";
 import Navbar from "../components/Navbar";
 import UserProfile from "../components/UserProfile";
+import { useSession } from "next-auth/react"
+
 const Home: NextPage = () => {
-  const { user, error, isLoading } = useUser();
+  const { data: session, status } = useSession()
+  // console.log(session.user)
 
-  if (isLoading) return <h1>Loading...</h1>;
 
-  if (error || !user) return <h1>Login or SignIn</h1>;
+  if (status === "loading") return <h1>Loading</h1>
+
+
+
   return (
     <>
       <Navbar></Navbar>
-      <HeadContainer name={user.name}></HeadContainer>
-      <MainContainer name={user.name} picture={user.picture}></MainContainer>
+      <HeadContainer name={session!.user!.name}></HeadContainer>
+      <MainContainer name={session!.user!.name}></MainContainer>
       <Footer></Footer>
     </>
   );

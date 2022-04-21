@@ -17,7 +17,7 @@ const Blik = () => {
     if (progress < 0) {
       refreshProgres();
     }
-    setProgress((progress) => progress - 0.833333);
+    setProgress((progress) => progress - 0.83);
   };
 
 
