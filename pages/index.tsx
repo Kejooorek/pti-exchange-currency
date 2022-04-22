@@ -10,16 +10,14 @@ const Home: NextPage = () => {
   const { data: session, status } = useSession()
   // console.log(session.user)
 
-
   if (status === "loading") return <h1>Loading</h1>
-
-
+  if (!session) return <h1>not logged in</h1>
 
   return (
     <>
       <Navbar></Navbar>
-      <HeadContainer name={session!.user!.name}></HeadContainer>
-      <MainContainer name={session!.user!.name}></MainContainer>
+      <HeadContainer name={session.user!.name}></HeadContainer>
+      <MainContainer name={session.user!.name}></MainContainer>
       <Footer></Footer>
     </>
   );
