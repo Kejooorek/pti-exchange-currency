@@ -1,13 +1,13 @@
-import NextAuth from 'next-auth'
+import NextAuth from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
-import CredentialsProvider from 'next-auth/providers/credentials';
-
+import CredentialsProvider from "next-auth/providers/credentials";
 export default NextAuth({
   providers: [
     GitHubProvider({
-        clientId: process.env.GITHUB_CLIENT_ID,
-        clientSecret: process.env.GITHUB_CLIENT_SECRET
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
+
     CredentialsProvider({
       // The name to display on the sign in form (e.g. "Sign in with...")
       name: "Credentials",
@@ -17,22 +17,22 @@ export default NextAuth({
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
         username: { label: "Username", type: "text", placeholder: "jsmith" },
-        password: {  label: "Password", type: "password" }
+        password: { label: "Password", type: "password" },
       },
       async authorize(credentials: any, req: any) {
         // Add logic here to look up the user from the credentials supplied
-        const user = { id: 1, name: "J Smith", email: "jsmith@example.com" }
-  
+        const user = { id: 1, name: "J Smith", email: "jsmith@example.com" };
+
         if (user) {
           // Any object returned will be saved in `user` property of the JWT
-          return user
+          return user;
         } else {
           // If you return null then an error will be displayed advising the user to check their details.
-          return null
-  
+          return null;
+
           // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
         }
-      }
-    })
-  ]
-})
+      },
+    }),
+  ],
+});
