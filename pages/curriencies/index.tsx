@@ -5,7 +5,6 @@ import Navbar from "../../components/Navbar";
 const Curriencies = () => {
   return (
     <>
-
       <Navbar></Navbar>
       <EuropaMap></EuropaMap>
     </>

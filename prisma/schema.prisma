@@ -6,10 +6,28 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
-// model Transaction {
-//   id String
-// }
+model Transaction {
+  id     Int      @id @default(autoincrement())
+  title  String
+  amount Int
+  date   DateTime @default(now())
+
+}
+
+model CustomerInformations {
+  id      String @id @default(uuid())
+  age     Int
+  name    String
+  balance Int
+  country String
+}
+
+model Currency {
+  id      String @id @default(uuid())
+  amount Float
+  
+}

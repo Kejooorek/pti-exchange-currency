@@ -6,11 +6,11 @@ import Navbar from "../components/Navbar";
 import UserProfile from "../components/UserProfile";
 import { useSession } from "next-auth/react";
 import DashBoard from "../components/DashBoard";
+import { useState } from "react";
+import { PrismaClient } from "@prisma/client";
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
-  // console.log(session.user)
-
   // if (status === "loading") return <h1>Loading</h1>;
   // if (!session) return <h1>not logged in</h1>;
   return (
