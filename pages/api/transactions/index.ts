@@ -1,6 +1,5 @@
 import { PrismaClient, Transaction } from "@prisma/client";
 import type { NextApiRequest, NextApiResponse } from "next";
-
 type TransactiosnType = {
   transaction: Transaction[];
 };
@@ -11,6 +10,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const transactionsList = await prisma.transaction.findMany();
-  res.status(200).json(transactionsList);
+  if(req.method !== 'POST'){
+    return res.status(405).json({message:'Method is not allowed'});
+  }
+  
 }

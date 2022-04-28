@@ -11,6 +11,7 @@ import { PrismaClient } from "@prisma/client";
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
+  console.log(session)
   // if (status === "loading") return <h1>Loading</h1>;
   // if (!session) return <h1>not logged in</h1>;
   return (
@@ -18,7 +19,9 @@ const Home: NextPage = () => {
       <Navbar></Navbar>
       <HeadContainer name={"Robert"}></HeadContainer>
       <DashBoard></DashBoard>
+    
     </>
+
   );
 };
 

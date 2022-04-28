@@ -6,7 +6,6 @@ const Curriencies = () => {
   return (
     <>
       <Navbar></Navbar>
-      <EuropaMap></EuropaMap>
     </>
   );
 };

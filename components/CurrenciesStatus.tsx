@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { CurrencyType } from "../types/currencyType";
 
 const CurrenciesStatus = () => {
+
+
   return (
+
     <div>
       <div className="container max-w-6xl px-5 mx-auto my-28">
         <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
           <div className="p-5 bg-white rounded shadow-sm">
-            <div className="text-base text-gray-400 ">EUR</div>
+            <div className="text-base text-gray-400 ">{"USD"}</div>
             <div className="flex items-center pt-1">
-              <div className="text-2xl font-bold text-gray-900 ">4,65PLN</div>
+              <div className="text-2xl font-bold text-gray-900 ">{2138}PLN</div>
               <span className="flex items-center px-2 py-0.5 mx-2 text-sm text-green-600 bg-green-100 rounded-full">
                 <svg
                   className="w-4 h-4"

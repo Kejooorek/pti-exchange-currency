@@ -5,7 +5,7 @@ import { signOut } from "next-auth/react";
 const Navbar = () => {
   return (
     <>
-      <nav className="relative bg-white border-gray-200 px-2 sm:px-4 py-2.5 shadow">
+      <nav className=" relative bg-white border-gray-200 px-2 sm:px-4 py-2.5 shadow">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <div className="flex md:order-2">
             <button

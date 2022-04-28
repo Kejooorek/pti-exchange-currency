@@ -1,0 +1,13 @@
+TODO CO ZROBIC 
+
+1.Zrobic Testy
+2.Zrobic Animacje
+3.Zrobic api od walut i manipulacja nimi
+4.Zrobic darkmode 
+5.Zrobic custom login page
+6.Zrobic cos obiektowo(xd)
+7.Znalezc jakiegos fajnego svg mapy europy
+8.Zrobic historie transakcji
+9.Wykorzystac jakos blika
+10.Zagospodarowac jakos strone glowna
+
