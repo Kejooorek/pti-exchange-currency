@@ -1,17 +1,13 @@
 import type { NextPage } from "next";
 import Footer from "../components/Footer";
 import HeadContainer from "../components/HeadContainer";
-import MainContainer from "../components/MainContainer";
 import Navbar from "../components/Navbar";
-import UserProfile from "../components/UserProfile";
 import { useSession } from "next-auth/react";
 import DashBoard from "../components/DashBoard";
-import { useState } from "react";
-import { PrismaClient } from "@prisma/client";
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
-  console.log(session)
+  console.log(session);
   // if (status === "loading") return <h1>Loading</h1>;
   // if (!session) return <h1>not logged in</h1>;
   return (
@@ -19,9 +15,7 @@ const Home: NextPage = () => {
       <Navbar></Navbar>
       <HeadContainer name={"Robert"}></HeadContainer>
       <DashBoard></DashBoard>
-    
     </>
-
   );
 };
 

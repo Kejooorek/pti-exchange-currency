@@ -1,11 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { CurrencyType } from "../types/currencyType";
 
+const [currencies, setCurrencies] = useState<CurrencyType[]>([] |);
+
+const getCurrenciesFromApi = async (url: string) => {
+  const res = await fetch(url);
+  const data = await res.json();
+  setCurrencies(data);
+};
+
+useEffect(() => {
+  getCurrenciesFromApi(
+    "http://api.nbp.pl/api/exchangerates/tables/a/?format=json"
+  );
+}, []);
+console.log(currencies);
+
 const CurrenciesStatus = () => {
-
-
   return (
-
     <div>
       <div className="container max-w-6xl px-5 mx-auto my-28">
         <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
