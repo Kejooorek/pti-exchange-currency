@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { User } from "../types/userType";
 const HeadContainer = ({ name }: User) => {
-
-
   return (
     <>
       <main className="flex flex-col justify-center items-center  h-80 w W-full bg-slate-100  w-full text-center bg-white rounded-lg border shadow-md">
