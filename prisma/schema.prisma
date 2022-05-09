@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -15,19 +12,10 @@ model Transaction {
   title  String
   amount Int
   date   DateTime @default(now())
-
 }
 
-model CustomerInformations {
-  id      String @id @default(uuid())
-  age     Int
-  name    String
-  balance Int
-  country String
-}
-
-model Currency {
-  id     String @id @default(uuid())
-  amount Float
+model CustomerWallet {
+  id     String @unique
+  amount Int
 
 }

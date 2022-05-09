@@ -8,13 +8,13 @@ import { ReactQueryCacheProvider, QueryCache, useQuery } from "react-query";
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
 
-  if (status === "loading") return <h1>Loading</h1>;
-  if (!session) return <h1>not logged in</h1>;
-  console.log(session!.user!.name);
+  // if (status === "loading") return <h1>Loading</h1>;
+  // if (!session) return <h1>not logged in</h1>;
+  // console.log(session!.user!.name);
   return (
     <>
       <Navbar></Navbar>
-      <HeadContainer name={session!.user!.name}></HeadContainer>
+      <HeadContainer name={"Robert"}></HeadContainer>
       <DashBoard></DashBoard>
     </>
   );

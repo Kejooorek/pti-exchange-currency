@@ -4,7 +4,7 @@ import { fetcher } from "../pages/lib/fetcher";
 import { CurrencyType } from "../types/currencyType";
 import ArrowDown from "./ArrowDown";
 import ArrowUp from "./ArrowUp";
-type APIResponse = Array<{
+export type APIResponse = Array<{
   rates: Array<CurrencyType>;
 }>;
 
@@ -66,7 +66,15 @@ const CurrenciesStatus = () => {
                 ) : (
                   <ArrowDown />
                 )}
-                <span>1.8%</span>
+                <span>
+                  {(
+                    ((convertedCurrencies["USD"].mid -
+                      previousConvertedCurrencies["USD"].mid) /
+                      previousConvertedCurrencies["USD"].mid) *
+                    1000
+                  ).toFixed(2)}
+                  %
+                </span>
               </span>
             </div>
           </div>
@@ -92,7 +100,15 @@ const CurrenciesStatus = () => {
                 ) : (
                   <ArrowDown />
                 )}
-                <span>2.5%</span>
+                <span>
+                  {(
+                    ((convertedCurrencies["EUR"].mid -
+                      previousConvertedCurrencies["EUR"].mid) /
+                      previousConvertedCurrencies["EUR"].mid) *
+                    1000
+                  ).toFixed(2)}
+                  %
+                </span>
               </span>
             </div>
           </div>
@@ -118,7 +134,15 @@ const CurrenciesStatus = () => {
                 ) : (
                   <ArrowDown />
                 )}
-                <span>5.2%</span>
+                <span>
+                  {(
+                    ((convertedCurrencies["GBP"].mid -
+                      previousConvertedCurrencies["GBP"].mid) /
+                      previousConvertedCurrencies["GBP"].mid) *
+                    1000
+                  ).toFixed(2)}
+                  %
+                </span>
               </span>
             </div>
           </div>
@@ -144,7 +168,15 @@ const CurrenciesStatus = () => {
                 ) : (
                   <ArrowDown />
                 )}
-                <span>%</span>
+                <span>
+                  {(
+                    ((convertedCurrencies["CHF"].mid -
+                      previousConvertedCurrencies["CHF"].mid) /
+                      previousConvertedCurrencies["CHF"].mid) *
+                    1000
+                  ).toFixed(2)}
+                  %
+                </span>
               </span>
             </div>
           </div>
