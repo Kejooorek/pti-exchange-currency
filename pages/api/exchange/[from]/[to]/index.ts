@@ -12,8 +12,7 @@ export default async function handler(
     ).then((a) => {
       return a.conversion_rates;
     });
-    console.log(searchedCurrency[to as string]);
-    res.status(200).json({ res: { from, to } });
+    res.status(200).json({ value: searchedCurrency[to as string]});
   } catch (error) {
     return res.status(404).json({ status: "Invalid currency code" });
   }
