@@ -1,7 +1,19 @@
+import { useSession } from "next-auth/react";
 import React, { useState, useEffect } from "react";
+import LoadingCircle from "../../components/LoadingCircle";
+import LoginBoard from "../../components/LoginBoard";
 import Navbar from "../../components/Navbar";
 
 const Blik = () => {
+  const { data: session, status } = useSession();
+  if (status === "loading") return <LoadingCircle></LoadingCircle>;
+  if (!session) return <LoginBoard></LoginBoard>;
+
+
+
+
+
+
   const [progress, setProgress] = useState(100);
   const [blikCode, setBlikCode] = useState<string>("Loading...");
   const [seconds, setSeconds] = useState(120);

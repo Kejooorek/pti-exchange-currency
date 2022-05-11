@@ -1,4 +1,3 @@
-import { randomUUID } from "crypto";
 import { prisma } from "../../lib/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
 export default async function handler(
@@ -13,6 +12,7 @@ export default async function handler(
     data: {
       title: title,
       amount: amount,
+
     },
   });
 

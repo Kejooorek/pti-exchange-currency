@@ -8,10 +8,14 @@ datasource db {
 }
 
 model Transaction {
-  id     String   @id @default(uuid())
-  title  String
-  amount Int
-  date   DateTime @default(now())
+  id       String   @id @default(uuid())
+  title    String
+  amount   Int
+  type     String
+  codeFrom String?  @default("TINTE")
+  codeTo   String?  @default("TINTE")
+  date     DateTime @default(now())
+
 }
 
 model CustomerWallet {

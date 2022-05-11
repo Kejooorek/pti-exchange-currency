@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { Fragment, useEffect, useMemo, useState } from "react";
 import CreditCard from "../../components/CreditCard";
 import EuropaMap from "../../components/EuropaMap";
 import Navbar from "../../components/Navbar";
@@ -7,6 +7,10 @@ import axios from "axios";
 import { fetcher } from "../lib/fetcher";
 import { APIResponse } from "../../components/CurrenciesStatus";
 import useSWR from "swr";
+import LoadingCircle from "../../components/LoadingCircle";
+import LoginBoard from "../../components/LoginBoard";
+import { Listbox, Transition } from '@headlessui/react'
+import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 const Curriencies = () => {
   const { data: session, status } = useSession();
   const [wallet, setWallet] = useState([]);
@@ -19,14 +23,16 @@ const Curriencies = () => {
     await axios
       .post(`/api/exchange/${fromCurrencyCode}/${toCurrencyCode}`)
       .then((res) => {
-        // console.log(res.data.value);
-        if (amount > 0) {
-          setUpdatedValue(res.data.value * amount);
+
+        if (amount <= 0 || fromCurrencyCode === toCurrencyCode) {
+          alert('Nie mozna wykonac transakcji')
         } else {
-          alert(
-            "Nie mozesz przewalutowac wartosci mniejszej badz rownej zero."
-          );
+          setUpdatedValue(res.data.value * amount);
+
         }
+
+        // console.log(res.data.value);
+
       });
     setAmount(0);
 
@@ -45,7 +51,10 @@ const Curriencies = () => {
   // console.log(currencyCodes)/
   // console.table(wallet)
 
+  // if (status === "loading") return <LoadingCircle></LoadingCircle>;
+  // if (!session) return <LoginBoard></LoginBoard>;
   return (
+
     <>
       <Navbar></Navbar>
       <div
@@ -70,7 +79,7 @@ const Curriencies = () => {
           />
         </div>
         <select
-          className="m-4"
+          className="m-4 "
           name=""
           id=""
           onChange={(e) => setToCurrencyCode(e.target.value)}
@@ -79,10 +88,25 @@ const Curriencies = () => {
             return <option value={currencyCode[0]}>{currencyCode[0]}</option>;
           })}
         </select>
-        <button onClick={() => getCurrencyExchange()}>make req!</button>
-        <p>
-          Przewalutowana wartosc:{updatedValue} {toCurrencyCode}
-        </p>
+        <button
+          onClick={() => {
+            setAmount(0)
+            setUpdatedValue(0)
+          }}
+          className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  mt-4  dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+          Zresetuj wartosci
+
+        </button>
+        <button
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  mt-4 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+
+          onClick={() => getCurrencyExchange()}>Dokonaj przewalutowania!</button>
+        <h1 className="text-xl font-medium  mb-4 text-gray-900">
+          Przewalutowana wartosc: <span className="text-green-600">
+            {updatedValue.toFixed(2)} {toCurrencyCode}
+
+          </span>
+        </h1>
       </div>
     </>
   );
