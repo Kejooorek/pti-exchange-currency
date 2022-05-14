@@ -12,7 +12,6 @@ export default async function handler(
     data: {
       title: title,
       amount: amount,
-
     },
   });
 

@@ -6,17 +6,16 @@ import { useSession } from "next-auth/react";
 import DashBoard from "../components/DashBoard";
 import { ReactQueryCacheProvider, QueryCache, useQuery } from "react-query";
 import LoginBoard from "../components/LoginBoard";
-import LoadingCircle from "../components/LoadingCircle";
 const Home: NextPage = () => {
-  const { data: session, status } = useSession();
+  // const { data: session, status } = useSession();
 
-  if (status === "loading") return <LoadingCircle></LoadingCircle>;
-  if (!session) return <LoginBoard></LoginBoard>;
+  // if (status === "loading") return <h1>Loading...</h1>;
+  // if (!session) return <LoginBoard></LoginBoard>;
 
   return (
     <>
       <Navbar></Navbar>
-      <HeadContainer name={session!.user!.name}></HeadContainer>
+      <HeadContainer name={"Robert"}></HeadContainer>
       <DashBoard></DashBoard>
     </>
   );

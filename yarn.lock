@@ -1503,6 +1503,16 @@
   dependencies:
     "function-bind" "^1.1.1"
 
+"headlessui@0.0.0":
+  "integrity" "sha512-CHvacVPbl8AqIg2sBNKySUmumu7o15jSrCaTrIh9GW2Eq4y/krCN/vZFOsKCwlrhWQbO4267a8xvvP8bs+qREQ=="
+  "resolved" "https://registry.npmjs.org/headlessui/-/headlessui-0.0.0.tgz"
+  "version" "0.0.0"
+
+"heroicons@^1.0.6":
+  "integrity" "sha512-5bxTsG2hyNBF0l+BrFlZlR5YngQNMfl0ggJjIRkMSADBQbaZMoTg47OIQzq6f1mpEZ85HEIgSC4wt5AeFM9J2Q=="
+  "resolved" "https://registry.npmjs.org/heroicons/-/heroicons-1.0.6.tgz"
+  "version" "1.0.6"
+
 "http-cache-semantics@^4.0.0":
   "integrity" "sha512-carPklcUh7ROWRK7Cv27RPtdhYhUsela/ue5/jKzjegVvXDqM2ILE9Q2BGn9JZJh1g87cp56su/FgQSzcWS8cQ=="
   "resolved" "https://registry.npmjs.org/http-cache-semantics/-/http-cache-semantics-4.1.0.tgz"

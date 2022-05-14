@@ -1,27 +1,21 @@
 import { useSession } from "next-auth/react";
 import React, { useState, useEffect } from "react";
-import LoadingCircle from "../../components/LoadingCircle";
 import LoginBoard from "../../components/LoginBoard";
 import Navbar from "../../components/Navbar";
 
 const Blik = () => {
-  const { data: session, status } = useSession();
-  if (status === "loading") return <LoadingCircle></LoadingCircle>;
-  if (!session) return <LoginBoard></LoginBoard>;
-
-
-
-
-
+  // const { data: session, status } = useSession();
+  // if (status === "loading") return <LoadingCircle></LoadingCircle>;
+  // if (!session) return <LoginBoard></LoginBoard>;
 
   const [progress, setProgress] = useState(100);
   const [blikCode, setBlikCode] = useState<string>("Loading...");
   const [seconds, setSeconds] = useState(120);
-  const [color, setColor] = useState('text-green-700');
+  const [color, setColor] = useState("text-green-700");
   const refreshProgres = () => {
     setBlikCode(Math.random().toString().substr(2, 6));
     setProgress(100);
-    setColor('text-green-700');
+    setColor("text-green-700");
     setSeconds(120);
   };
 
@@ -32,20 +26,17 @@ const Blik = () => {
     setProgress((progress) => progress - 0.83);
   };
 
-
   if (seconds <= 0) {
     refreshProgres();
   }
 
-
   const secondsMenagment = () => {
     setSeconds((seconds) => seconds - 1);
-
-  }
+  };
 
   const copyBlikCode = () => {
-    navigator.clipboard.writeText(blikCode)
-  }
+    navigator.clipboard.writeText(blikCode);
+  };
 
   useEffect(() => {
     setBlikCode(Math.random().toString().substr(2, 6));
@@ -87,7 +78,9 @@ const Blik = () => {
             Skopiuj Kod
           </button>
         </div>
-        <h5 className={`${seconds < 60 ? "text-red-700" : color} font-bold`}>{seconds}s</h5>
+        <h5 className={`${seconds < 60 ? "text-red-700" : color} font-bold`}>
+          {seconds}s
+        </h5>
       </main>
     </>
   );
