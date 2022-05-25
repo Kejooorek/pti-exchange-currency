@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useSession } from "next-auth/react";
 import React, { useState, useEffect } from "react";
 import LoginBoard from "../../components/LoginBoard";
@@ -13,7 +14,8 @@ const Blik = () => {
   const [seconds, setSeconds] = useState(120);
   const [color, setColor] = useState("text-green-700");
   const refreshProgres = () => {
-    setBlikCode(Math.random().toString().substr(2, 6));
+    axios.get('/api/blik_generator').then(res => setBlikCode(res.data.code))
+
     setProgress(100);
     setColor("text-green-700");
     setSeconds(120);
@@ -39,7 +41,7 @@ const Blik = () => {
   };
 
   useEffect(() => {
-    setBlikCode(Math.random().toString().substr(2, 6));
+    axios.get('/api/blik_generator').then(res => setBlikCode(res.data.code))
     const progressInterval = setInterval(() => {
       secondsMenagment();
       progresMenagment();
