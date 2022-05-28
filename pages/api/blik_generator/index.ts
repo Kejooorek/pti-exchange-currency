@@ -5,7 +5,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    res.status(200).json({code:Math.random().toString().substr(2, 6)})
+    res.status(200).json({ code: Math.random().toString().substr(2, 6) });
   } catch (error) {}
-    res.status(404).json({ message: "something went wrong" });
+  res.status(404).json({ message: "something went wrong" });
 }

@@ -1,8 +1,8 @@
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import React from "react";
 import LoginBoard from "../../components/LoginBoard";
 import Navbar from "../../components/Navbar";
-
 const MakeTransaction = () => {
   // const { data: session, status } = useSession();
 
@@ -36,12 +36,14 @@ const MakeTransaction = () => {
                 Fingerstache flexitarian street art 8-bit waistcoat. Distillery
                 hexagon disrupt edison bulbche.
               </p>
-              <button
-                type="button"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-              >
-                Wykonaj
-              </button>
+              <Link href="/make_transaction/ordinary_transfer">
+                <button
+                  type="button"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                >
+                  Wykonaj
+                </button>
+              </Link>
             </div>
             <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
               <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">
@@ -51,12 +53,14 @@ const MakeTransaction = () => {
                 Fingerstache flexitarian street art 8-bit waistcoat. Distillery
                 hexagon disrupt edison bulbche.
               </p>
-              <button
-                type="button"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-              >
-                Wykonaj
-              </button>
+              <Link href="/make_transaction/international_transfer">
+                <button
+                  type="button"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                >
+                  Wykonaj
+                </button>
+              </Link>
             </div>
             <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
               <h2 className="text-lg sm:text-xl text-grsay-900 font-medium title-font mb-2">
@@ -66,12 +70,14 @@ const MakeTransaction = () => {
                 Fingerstache flexitarian street art 8-bit waistcoat. Distillery
                 hexagon disrupt edison bulbche.
               </p>
-              <button
-                type="button"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-              >
-                Wykonaj
-              </button>
+              <Link href="/make_transaction/blik_transfer">
+                <button
+                  type="button"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                >
+                  Wykonaj
+                </button>
+              </Link>
             </div>
             <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
               <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">
@@ -81,17 +87,21 @@ const MakeTransaction = () => {
                 Fingerstache flexitarian street art 8-bit waistcoat. Distillery
                 hexagon disrupt edison bulbche.
               </p>
-              <button
-                type="button"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-              >
-                Wykonaj
-              </button>
+              <Link href="/make_transaction/cash_withdrawal">
+                <button
+                  type="button"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                >
+                  Wykonaj
+                </button>
+              </Link>
             </div>
           </div>
-          <button className="flex mx-auto bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium mt-16 text-white  border-0 py-4 px-8 focus:outline-none hover:bg-blue-600 rounded-2xl ">
-            Powrót
-          </button>
+          <Link href="/">
+            <button className="flex mx-auto bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium mt-16 text-white  border-0 py-4 px-8 focus:outline-none hover:bg-blue-600 rounded-2xl ">
+              Powrót
+            </button>
+          </Link>
         </div>
       </section>
     </>

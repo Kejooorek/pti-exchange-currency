@@ -33,14 +33,14 @@ const Curriencies = () => {
     console.log(fromCurrencyCode, toCurrencyCode, amount);
   }
 
-  useMemo(() => {
-    fetcher("api/get_codes").then((response) => {
-      setCurrencyCodes(response.res);
-    });
-    fetcher("/api/wallet").then((response) => {
-      setWallet(response.wallet);
-    });
-  }, []);
+  // useMemo(() => {
+  //   fetcher("api/get_codes").then((response) => {
+  //     setCurrencyCodes(response.res);
+  //   });
+  //   fetcher("/api/wallet").then((response) => {
+  //     setWallet(response.wallet);
+  //   });
+  // }, []);
 
   // console.log(currencyCodes)/
   // console.table(wallet)
@@ -50,7 +50,8 @@ const Curriencies = () => {
   return (
     <>
       <Navbar></Navbar>
-      <div
+
+      {/* <div
         style={{ height: "100vh" }}
         className="flex w-full justify-center items-center flex-col"
       >
@@ -102,7 +103,7 @@ const Curriencies = () => {
             {updatedValue.toFixed(2)} {toCurrencyCode}
           </span>
         </h1>
-      </div>
+      </div> */}
     </>
   );
 };

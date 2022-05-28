@@ -16,7 +16,7 @@ const Home: NextPage = () => {
     <>
       <Navbar></Navbar>
       <HeadContainer name={"Robert"}></HeadContainer>
-      <DashBoard></DashBoard>
+      {/* <DashBoard></DashBoard> */}
     </>
   );
 };
